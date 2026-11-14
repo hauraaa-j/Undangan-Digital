@@ -1,0 +1,296 @@
+/* =========================================================================
+   THE ROYAL WEDDING OF NAVIER & HEINREY
+   The Western Empire Imperial Stylesheet
+   Refined for Luxury Editorial Aesthetic & Perfect Typography
+   ========================================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
+
+:root {
+  --ivory-cream: #F8F4EB;
+  --ivory-light: #FDFBF7;
+  --champagne-gold: #D6B875;
+  --gold-light: #F7E7B4;
+  --gold-bright: #F5D37B;
+  --gold-dark: #99783D;
+  --gold-bronze: #876228;
+  --royal-navy: #172B45;
+  --navy-deep: #0E1A2B;
+  --navy-light: #243D5E;
+  --dusty-blue: #A8B8CC;
+  --dusty-blue-light: #DCE5EE;
+  --soft-white: #FFFFFF;
+}
+
+/* Custom Imperial Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #172B45;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #D6B875, #99783D);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #ECC880, #876228);
+}
+
+/* Typography Classes */
+.font-cinzel {
+  font-family: 'Cinzel', serif;
+}
+.font-cormorant {
+  font-family: 'Cormorant Garamond', serif;
+}
+.font-playfair {
+  font-family: 'Playfair Display', serif;
+}
+.font-montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+.font-script {
+  font-family: 'Pinyon Script', cursive;
+}
+
+/* Gold Text Shimmer */
+.gold-text-shimmer {
+  background: linear-gradient(
+    110deg,
+    #99783D 0%,
+    #D6B875 25%,
+    #FFF4D0 45%,
+    #D6B875 60%,
+    #99783D 100%
+  );
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: goldShimmer 6s linear infinite;
+}
+
+@keyframes goldShimmer {
+  0% { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #B58F42 0%, #E6C87C 50%, #99783D 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Borders & Ornaments */
+.border-gold-royal {
+  border-color: #D6B875;
+}
+
+.gold-box-glow {
+  box-shadow: 0 10px 30px -10px rgba(214, 184, 117, 0.3), 0 0 1px 1px rgba(214, 184, 117, 0.35);
+}
+
+.gold-box-glow-lg {
+  box-shadow: 0 20px 45px -12px rgba(214, 184, 117, 0.4), 0 0 0 1px rgba(214, 184, 117, 0.3);
+}
+
+.parchment-card {
+  background: linear-gradient(180deg, #FDFBF7 0%, #F8F4EB 100%);
+  border: 1px solid rgba(214, 184, 117, 0.45);
+  position: relative;
+}
+
+.parchment-card::before {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border: 1px solid rgba(214, 184, 117, 0.2);
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* Royal Envelope 3D Architecture */
+.envelope-perspective {
+  perspective: 1200px;
+}
+
+.envelope-wrapper {
+  transform-style: preserve-3d;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.envelope-flap {
+  transform-origin: top center;
+  transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1), z-index 0.2s 0.4s;
+}
+
+.envelope-flap.opened {
+  transform: rotateX(180deg);
+  z-index: 1;
+}
+
+.wax-seal {
+  transition: all 0.4s ease;
+  filter: drop-shadow(0 6px 12px rgba(135, 98, 40, 0.45));
+}
+
+.wax-seal:hover {
+  transform: scale(1.06);
+  filter: drop-shadow(0 8px 18px rgba(214, 184, 117, 0.6));
+}
+
+/* Subtle Floating Particles */
+.sparkle-particle {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 50%;
+  background: radial-gradient(circle, #FFF4D0 20%, #D6B875 70%, transparent 100%);
+  opacity: 0.6;
+  animation: floatUp 8s ease-in-out infinite;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(0.6) rotate(0deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  80% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-200px) scale(1.2) rotate(180deg);
+    opacity: 0;
+  }
+}
+
+/* Floating White Rose Petals */
+.floating-petal {
+  position: fixed;
+  pointer-events: none;
+  z-index: 40;
+  background-size: contain;
+  background-repeat: no-repeat;
+  will-change: transform, opacity;
+  animation: petalFall linear infinite;
+}
+
+@keyframes petalFall {
+  0% {
+    transform: translate3d(0, -50px, 0) rotate(0deg) scale(0.8);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.8;
+  }
+  85% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate3d(80px, 105vh, 0) rotate(360deg) scale(1.1);
+    opacity: 0;
+  }
+}
+
+/* Gold Frame Filigree Corners */
+.filigree-corner-tl,
+.filigree-corner-tr,
+.filigree-corner-bl,
+.filigree-corner-br {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  pointer-events: none;
+  color: #D6B875;
+}
+.filigree-corner-tl { top: 6px; left: 6px; }
+.filigree-corner-tr { top: 6px; right: 6px; transform: rotate(90deg); }
+.filigree-corner-bl { bottom: 6px; left: 6px; transform: rotate(-90deg); }
+.filigree-corner-br { bottom: 6px; right: 6px; transform: rotate(180deg); }
+
+/* Royal Buttons */
+.royal-btn-gold {
+  background: linear-gradient(135deg, #ECC880 0%, #D6B875 50%, #99783D 100%);
+  color: #172B45;
+  box-shadow: 0 4px 15px rgba(214, 184, 117, 0.4);
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.royal-btn-gold::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 40%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.35);
+  transform: rotate(30deg);
+  transition: all 0.75s ease;
+}
+
+.royal-btn-gold:hover::after {
+  left: 130%;
+}
+
+.royal-btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(214, 184, 117, 0.65);
+}
+
+.royal-btn-navy {
+  background: linear-gradient(135deg, #172B45 0%, #0E1A2B 100%);
+  color: #F8F4EB;
+  border: 1px solid #D6B875;
+  box-shadow: 0 4px 15px rgba(23, 43, 69, 0.35);
+  transition: all 0.35s ease;
+}
+
+.royal-btn-navy:hover {
+  background: linear-gradient(135deg, #243D5E 0%, #172B45 100%);
+  border-color: #ECC880;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(214, 184, 117, 0.45);
+}
+
+/* Sunbeam & Soft Light */
+.sunbeam-overlay {
+  background: radial-gradient(
+    ellipse at 80% 10%,
+    rgba(253, 243, 200, 0.3) 0%,
+    rgba(214, 184, 117, 0.12) 35%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.animate-zoom-in {
+  animation: zoomIn 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* Active Nav Indicator */
+.nav-link-active {
+  color: #D6B875 !important;
+}
+.nav-link-active::after {
+  width: 100% !important;
+}
